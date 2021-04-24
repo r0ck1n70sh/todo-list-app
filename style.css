@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+}
+
+.strike-text {
+    text-decoration-line: line-through;
+}
+
+.div-style1 {
+    border: 10px solid black;
+    margin: auto;
+    padding: 20px;
+}
+
+.div-style2 {
+    border: 5px groove grey;
+    margin: 20px;
+    padding: 10px;
+}
+
+.div-style-task {
+    border: groove;
+}
+
+.div-input {
+    padding: 10px;
+}

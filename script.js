@@ -1,19 +1,24 @@
-"use strict"
-var cont=3;
+'use strict'
+import {Task} from './task.js';
 
-function addTask(){
-	var inpt= document.getElementById('input-task').value;
-	
-	var parrElement= document.getElementById('tasks');
-	
-	var newDiv= document.createElement('div');
-	var newCheckbox= document.createElement('input');
-	newCheckbox.type= 'checkbox';
-	
-	newDiv.innerHTML= inpt;
-	cont+=1;
-	newDiv.id=String(cont);	
+let cnt = 0;
 
-	parrElement.insertBefore(newDiv, parrElement.firstChild);
-	newDiv.insertBefore(newCheckbox, newDiv.firstChild);			
-}
+$('#btn-input').click(() => {
+	let inputText = $('#input-input').val();
+	let $newTask = Task(inputText);
+	$('#div-tasks').prepend($newTask);
+
+	cnt++;
+	console.log(cnt);
+});
+
+$('.input[type=checkbox]').each(() => {
+	$(this).find('input').change(() => {
+		console.log(`${cnt} checked`);
+	});
+});
+
+$('#btn-reset').click(() => {
+	$('#div-tasks').empty();
+})
+
